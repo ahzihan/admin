@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-header py-0 bg-primary text-white d-flex justify-content-between align-items-center">
                 <h5 class="title">Create Permission</h5>
-                <a href="{{ route('permission.index') }}" class="btn btn-sm btn-danger">Permission List</a>
+                <a href="{{ route('permission.index') }}" class="btn btn-sm btn-info">Permission List</a>
             </div>
             <div class="card-body">
                 <form class="my-3" action="{{ route('permission.store') }}" method="POST">

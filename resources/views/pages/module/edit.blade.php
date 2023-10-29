@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-header py-0 bg-primary text-white d-flex justify-content-between align-items-center">
                 <h5 class="title">Update Module</h5>
-                <a href="{{ route('module.index') }}" class="btn btn-sm btn-danger">Module List</a>
+                <a href="{{ route('module.index') }}" class="btn btn-sm btn-info">Module List</a>
             </div>
             <div class="card-body">
                 <form class="my-3" action="{{ route('module.update', $module->id) }}" method="POST">
