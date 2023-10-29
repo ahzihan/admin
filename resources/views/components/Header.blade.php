@@ -26,11 +26,21 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="btn btn-sm btn-danger dropdown-toggle p-8 border-0 m-6" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+
+                        <a class="dropdown-item btn btn-sm btn-danger text-center p-8 border-0 m-6" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-end p-0 border-0" aria-labelledby="navbarDropdown">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                        </form>
+                        {{-- <a id="navbarDropdown" class="btn btn-sm btn-danger dropdown-toggle p-8 border-0 m-6" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                        </a> --}}
+
+                        {{-- <div class="dropdown-menu dropdown-menu-end p-0 border-0" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item btn btn-sm btn-danger text-center p-8 border-0 m-6" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -41,7 +51,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                        </div>
+                        </div> --}}
                     </li>
                 @endguest
             </ul>

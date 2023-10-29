@@ -16,10 +16,10 @@ use App\Http\Controllers\Backend\PermissionController;
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Page Route
-Route::get('/', [DashboardController::class, 'Dashboard']);
+Route::get('/dashboard', [DashboardController::class, 'Dashboard']);
 
 /* Module Route */
 Route::resource('module', ModuleController::class);
