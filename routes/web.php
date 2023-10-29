@@ -14,7 +14,7 @@ use App\Http\Controllers\Backend\PermissionController;
 |--------------------------------------------------------------------------
 */
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
