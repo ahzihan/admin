@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Models\Module;
 use Illuminate\Support\Str;
-use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ModuleStoreRequest;
 
 class ModuleController extends Controller
@@ -57,7 +57,7 @@ class ModuleController extends Controller
             'module_slug' => Str::slug($request->module_name),
         ]);
 
-        Toastr::success('Module Updated Successfully!');
+        Toastr::success('<span style="color:white;background:green;">Module Updated Successfully!</span>');
         return redirect()->route('module.index');
     }
 
@@ -67,7 +67,7 @@ class ModuleController extends Controller
         $module = Module::find($id);
         $module->delete();
 
-        Toastr::success('Module Deleted Successfully!');
+        Toastr::error('Module Deleted Successfully!');
         return redirect()->route('module.index');
     }
 }

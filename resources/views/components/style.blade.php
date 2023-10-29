@@ -7,4 +7,9 @@
 <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/datatables.min.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/datatables-select.min.css')}}">
-@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+<link href="{{asset('assets/css/toastify.min.css')}}" rel="stylesheet" />
+<script src="{{asset('assets/js/toastify-js.js')}}"></script>
+<script src="{{asset('assets/js/axios.min.js')}}"></script>
+<script src="{{asset('assets/js/config.js')}}"></script>
+

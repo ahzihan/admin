@@ -22,5 +22,6 @@
     </div>
 
     @include('components.script')
+    @stack('scripts')
 </body>
 </html>
