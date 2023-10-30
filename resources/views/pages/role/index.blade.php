@@ -57,13 +57,16 @@
                                         </td>
                                         <td class="th-sm py-2">{{ $role->role_slug }}</td>
                                         <td class="th-sm text-center py-2">
+
                                             <a class="btn btn-sm btn-info p-2" href="{{ route('role.edit', $role->id ) }}"><i class="fas fa-edit"></i></a>
 
-                                            <form class="d-inline" action="{{ route('role.destroy',$role->id ) }}" method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="show_confirm btn btn-sm btn-danger p-2" type="submit"><i class="fas fa-trash-alt"></i></button>
-                                            </form>
+                                            @if ($role->is_deletable && Auth::user()->hasPermission('delete-role'))
+                                                <form class="d-inline" action="{{ route('role.destroy',$role->id ) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="show_confirm btn btn-sm btn-danger p-2" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                                </form>
+                                            @endif
 
                                         </td>
                                     </tr>

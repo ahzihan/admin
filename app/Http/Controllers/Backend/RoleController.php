@@ -17,7 +17,7 @@ class RoleController extends Controller
     {
         Gate::authorize('index-role');
 
-        $roles=Role::with('permissions:id,permission_name,permission_slug')->select(['id','role_name','role_slug','role_note','updated_at'])->latest()->get();
+        $roles=Role::with('permissions:id,permission_name,permission_slug')->select(['id','role_name','role_slug','is_deletable','role_note','updated_at'])->latest()->get();
 
         return view('pages.role.index',compact('roles'));
     }
