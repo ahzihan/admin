@@ -15,8 +15,8 @@
     <!-- Toster -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @include('components.style')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
