@@ -60,7 +60,13 @@
 
                                 <div class="card-body">
                                     <div class="my-2">
-                                        <h5>Module List:</h5>
+                                        <h5 class="@error('permissions') is-invalid @enderror">Module List:</h5>
+                                        @error('permissions')
+                                            <span class="text-red invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+
                                          @foreach ($modules->chunk(4) as $key => $chunks)
                                             <div class="d-md-flex">
                                                 @foreach ($chunks as $module)

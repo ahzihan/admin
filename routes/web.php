@@ -19,7 +19,7 @@ Auth::routes(['register' => false]);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Page Route
-Route::get('/dashboard', [DashboardController::class, 'Dashboard']);
+Route::get('/dashboard', [DashboardController::class, 'Dashboard'])->name('dashboard');
 
 /* Module Route */
 Route::resource('module', ModuleController::class);

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Auth\Access\Gate;
+use Illuminate\Support\Facades\Gate;
 
 class DashboardController extends Controller
 {
     public function Dashboard()
     {
-        // Gate::authorize('access-dashboard');
+        Gate::authorize('access-dashboard');
         return view('dashboard');
     }
 }
