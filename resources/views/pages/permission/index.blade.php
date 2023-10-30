@@ -44,12 +44,12 @@
                                 <tbody>
                                     @forelse ($permissions as $permission)
                                     <tr role="row" class="odd">
-                                        <th class="th-sm sorting_1 py-2 text-center">{{ $loop->index+1 }}</th>
-                                        <th class="th-sm py-2">{{ $permission->updated_at->format('d-M-Y') }}</th>
-                                        <th class="th-sm py-2">{{ $permission->module['module_name'] }}</th>
-                                        <th class="th-sm py-2">{{ $permission->permission_name }}</th>
-                                        <th class="th-sm py-2">{{ $permission->permission_slug }}</th>
-                                        <th class="th-sm text-center py-2">
+                                        <td class="th-sm sorting_1 py-2 text-center">{{ $loop->index+1 }}</td>
+                                        <td class="th-sm py-2">{{ $permission->updated_at->format('d-M-Y') }}</td>
+                                        <td class="th-sm py-2">{{ $permission->module['module_name'] }}</td>
+                                        <td class="th-sm py-2">{{ $permission->permission_name }}</td>
+                                        <td class="th-sm py-2">{{ $permission->permission_slug }}</td>
+                                        <td class="th-sm text-center py-2">
                                             <a class="btn btn-sm btn-info p-2" href="{{ route('permission.edit', $permission->id ) }}"><i class="fas fa-edit"></i></a>
 
                                             <form class="d-inline" action="{{ route('permission.destroy',$permission->id ) }}" method="post">
@@ -57,7 +57,7 @@
                                                 @method('DELETE')
                                                 <button class="show_confirm btn btn-sm btn-danger p-2" type="submit"><i class="fas fa-trash-alt"></i></button>
                                             </form>
-                                        </th>
+                                        </td>
                                     </tr>
                                     @empty
                                     <tr role="row" class="odd">

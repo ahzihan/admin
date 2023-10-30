@@ -29,9 +29,9 @@
                         </div>
                     </div>
 
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-sm btn-primary float-right">Submit</button>
+                            <button type="submit" class="btn btn-md btn-primary float-right">Submit</button>
                         </div>
                     </div>
                 </form>

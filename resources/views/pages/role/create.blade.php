@@ -44,7 +44,7 @@
                         </div>
                     </div>
 
-                    <div class="row mb-2">
+                    <div class="row my-3">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
@@ -61,7 +61,7 @@
                                     <div class="my-2">
                                         <h5>Module List:</h5>
                                          @foreach ($modules->chunk(4) as $key => $chunks)
-                                            <div class="d-flex flex-gap-4">
+                                            <div class="d-md-flex">
                                                 @foreach ($chunks as $module)
                                                     <div class="col">
                                                         <h5 class="my-2 card-title">{{ $module->module_name }}</h5>

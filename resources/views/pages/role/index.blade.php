@@ -48,7 +48,7 @@
                                         <td class="th-sm py-2">{{ $role->role_name }}</td>
                                         <td class="th-sm py-2">
                                         @foreach ($role->permissions->chunk(4) as $key => $chunks)
-                                            <div class="row ml-4">
+                                            <div class="row ml-lg-2">
                                                 @foreach ($chunks as $permission)
                                                 <span class="btn btn-sm btn-info p-2">{{ $permission->permission_slug }}</span>
                                                 @endforeach

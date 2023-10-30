@@ -20,32 +20,32 @@
                                 style="width: 100%;">
                                 <thead>
                                     <tr role="row">
-                                        <th class="th-sm sorting_asc py-2 text-center" tabindex="0" aria-controls="VisitorDt"
-                                        rowspan="1" colspan="1" aria-sort="ascending"
+                                        <th class="th-sm sorting_asc py-2 text-center" aria-controls="VisitorDt"
+                                        aria-sort="ascending"
                                         aria-label="NO: activate to sort column descending" style="width: 10px">NO
                                         </th>
 
-                                        <th class="th-sm sorting py-2" tabindex="0" aria-controls="VisitorDt" rowspan="1"
-                                        colspan="1" aria-label="Last Update: activate to sort column ascending">Last Update</th>
+                                        <th class="th-sm sorting py-2" aria-controls="VisitorDt"
+                                        aria-label="Last Update: activate to sort column ascending">Last Update</th>
 
-                                        <th class="th-sm sorting py-2" tabindex="0" aria-controls="VisitorDt" rowspan="1"
-                                        colspan="1" aria-label="Module Name: activate to sort column ascending">Module Name</th>
+                                        <th class="th-sm sorting py-2" aria-controls="VisitorDt"
+                                        aria-label="Module Name: activate to sort column ascending">Module Name</th>
 
-                                        <th class="th-sm sorting py-2" tabindex="0" aria-controls="VisitorDt" rowspan="1"
-                                        colspan="1" aria-label="Module Slug: activate to sort column ascending">Module Slug</th>
+                                        <th class="th-sm sorting py-2" aria-controls="VisitorDt"
+                                        aria-label="Module Slug: activate to sort column ascending">Module Slug</th>
 
-                                        <th class="th-sm sorting text-center" tabindex="0" aria-controls="VisitorDt" rowspan="1"
-                                        colspan="1" aria-label="Action: activate to sort column ascending">Action</th>
+                                        <th class="th-sm sorting text-center" aria-controls="VisitorDt"
+                                        aria-label="Action: activate to sort column ascending">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($modules as $module)
                                     <tr role="row" class="odd">
-                                        <th class="th-sm sorting_1 py-2 text-center">{{ $loop->index+1 }}</th>
-                                        <th class="th-sm py-2">{{ $module->updated_at->format('d-M-Y') }}</th>
-                                        <th class="th-sm py-2">{{ $module->module_name }}</th>
-                                        <th class="th-sm py-2">{{ $module->module_slug }}</th>
-                                        <th class="th-sm text-center py-2">
+                                        <td class="th-sm sorting_1 py-2 text-center">{{ $loop->index+1 }}</td>
+                                        <td class="th-sm py-2">{{ $module->updated_at->format('d-M-Y') }}</td>
+                                        <td class="th-sm py-2">{{ $module->module_name }}</td>
+                                        <td class="th-sm py-2">{{ $module->module_slug }}</td>
+                                        <td class="th-sm text-center py-2">
                                             <a class="btn btn-sm btn-info p-2" href="{{ route('module.edit', $module->id ) }}"><i class="fas fa-edit"></i></a>
 
                                             <form class="d-inline" action="{{ route('module.destroy',$module->id ) }}" method="post">
@@ -54,7 +54,7 @@
                                                 <button class="show_confirm btn btn-sm btn-danger p-2" type="submit"><i class="fas fa-trash-alt"></i></button>
                                             </form>
 
-                                        </th>
+                                        </td>
                                     </tr>
                                     @empty
                                     <tr role="row" class="odd">
