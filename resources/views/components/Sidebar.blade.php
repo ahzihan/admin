@@ -20,9 +20,9 @@
                     <li> <a class="text-decoration-none" href="{{ route('role.index') }}" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Role</span></a></li>
                 @endcan
 
-                {{-- @can('index-visitor') --}}
-                    <li> <a class="text-decoration-none" href="" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Visitor</span></a></li>
-                {{-- @endcan --}}
+                @can('index-visitor')
+                    <li> <a class="text-decoration-none" href="{{ route('visitor.index') }}" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Visitor</span></a></li>
+                @endcan
 
 			</ul>
         </nav>

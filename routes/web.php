@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\ModuleController;
@@ -25,3 +26,4 @@ Route::get('/dashboard', [DashboardController::class, 'Dashboard'])->name('dashb
 Route::resource('module', ModuleController::class);
 Route::resource('permission', PermissionController::class);
 Route::resource('role', RoleController::class);
+Route::resource('visitor', VisitorController::class);

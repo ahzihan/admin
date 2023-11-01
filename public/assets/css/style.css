@@ -5,3 +5,10 @@ padding: 1% 1% 1% 1% ;
 	width:60px;
 	height:auto;
 }
+.error_txt {
+    color: #333;
+    font-size: 150px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1;
+}
