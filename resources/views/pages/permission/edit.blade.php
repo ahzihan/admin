@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container my-5">
+    <div class="container my-5">
         <div class="card">
             <div class="card-header py-0 bg-primary text-white d-flex justify-content-between align-items-center">
                 <h5 class="title">Update Permission</h5>
@@ -20,12 +20,16 @@
                     <div class="row mb-2">
                         <label class="col-sm-6 col-md-3 form-label">Module Name</label>
                         <div class="col-sm-6 col-md-9">
-                            <select class="form-control @error('module_id') is-invalid
-                                @enderror" name="module_id" id="module_id" data-choice="active">
+                            <select
+                                class="form-control @error('module_id') is-invalid
+                                @enderror"
+                                name="module_id" id="module_id" data-choice="active">
 
                                 @foreach ($modules as $module)
-                                    <option class="py-2" value="{{ $module->id }}" {{ ($permission->module_id == $module->id) ? 'selected' : '' }} >{{ $module->module_name }}</option>
-                                    @endforeach
+                                    <option class="py-2" value="{{ $module->id }}"
+                                        {{ $permission->module_id == $module->id ? 'selected' : '' }}>
+                                        {{ $module->module_name }}</option>
+                                @endforeach
 
                             </select>
 

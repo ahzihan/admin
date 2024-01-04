@@ -19,7 +19,7 @@
                         <label class="col-sm-6 col-md-3 form-label">Module Name</label>
                         <div class="col-sm-6 col-md-9">
                             <select class="form-control @error('module_id') is-invalid @enderror" name="module_id"
-                            id="module_id" value="{{ old('module_id') }}">
+                                id="module_id" value="{{ old('module_id') }}">
 
                                 <option class="py-2" value="">Select Module</option>
 

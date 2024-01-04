@@ -13,8 +13,8 @@
             </div>
             <div class="card-body">
                 <form class="my-3" action="{{ route('role.update', $role->id) }}" method="POST">
-                        @csrf
-                        @method('PUT')
+                    @csrf
+                    @method('PUT')
                     <div class="row mb-3">
                         <label class="col-sm-6 col-md-3 form-label">Role Name</label>
                         <div class="col-sm-6 col-md-9">
@@ -34,8 +34,8 @@
                         <label class="col-sm-6 col-md-3 form-label">Role Note</label>
                         <div class="col-sm-6 col-md-9">
                             <input type="text" name="role_note"
-                            class="form-control @error('role_note') is-invalid @enderror"
-                            value="{{ $role->role_note }}">
+                                class="form-control @error('role_note') is-invalid @enderror"
+                                value="{{ $role->role_note }}">
 
                             @error('role_note')
                                 <span class="text-red invalid-feedback" role="alert">
@@ -67,25 +67,24 @@
                                             </span>
                                         @enderror
 
-                                         @foreach ($modules->chunk(4) as $key => $chunks)
+                                        @foreach ($modules->chunk(4) as $key => $chunks)
                                             <div class="d-md-flex">
                                                 @foreach ($chunks as $module)
                                                     <div class="col">
                                                         <h5 class="my-2 card-title">{{ $module->module_name }}</h5>
 
                                                         @foreach ($module->permissions as $permission)
-                                                        <div class="form-check flex mb-3">
-                                                            <input class="form-check-input mt-3" type="checkbox" value="{{ $permission->id }}" name="permissions[]"
-                                                            id="permission-{{ $permission->id }}"
-                                                            @if (isset($role))
-                                                                @foreach ($role->permissions as $rPermission)
-                                                                    {{ $rPermission->id==$permission->id? 'checked' : '' }}
-                                                                @endforeach
-                                                            @endif
-                                                            >
-                                                            <label class="form-check-label" for="permission-{{ $permission->id }}">{{$permission->permission_name }}
-                                                            </label>
-                                                        </div>
+                                                            <div class="form-check flex mb-3">
+                                                                <input class="form-check-input mt-3" type="checkbox"
+                                                                    value="{{ $permission->id }}" name="permissions[]"
+                                                                    id="permission-{{ $permission->id }}"
+                                                                    @if (isset($role)) @foreach ($role->permissions as $rPermission)
+                                                                    {{ $rPermission->id == $permission->id ? 'checked' : '' }}
+                                                                @endforeach @endif>
+                                                                <label class="form-check-label"
+                                                                    for="permission-{{ $permission->id }}">{{ $permission->permission_name }}
+                                                                </label>
+                                                            </div>
                                                         @endforeach
                                                     </div>
                                                 @endforeach
@@ -111,17 +110,17 @@
 @endsection
 
 @push('scripts')
-<script>
-    $("#select-all").click(function(event){
-        if(this.checked){
-            $(':checkbox').each(function(){
-                this.checked=true;
-            })
-        }else{
-            $(':checkbox').each(function(){
-                this.checked=false;
-            })
-        }
-    })
-</script>
+    <script>
+        $("#select-all").click(function(event) {
+            if (this.checked) {
+                $(':checkbox').each(function() {
+                    this.checked = true;
+                })
+            } else {
+                $(':checkbox').each(function() {
+                    this.checked = false;
+                })
+            }
+        })
+    </script>
 @endpush
